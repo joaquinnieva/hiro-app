@@ -7,9 +7,8 @@ const HeroInfo = () => {
   const { id } = useParams();
 
   useEffect(() => {
-    getApi(`${id}/work`).then((data) => {
+    getApi(`${id}`).then((data) => {
       setHero(data);
-      console.log(hero);
     });
   }, [id]);
 
@@ -17,10 +16,10 @@ const HeroInfo = () => {
     <div>
       <div className="col-lg-3 col-md-6 col-sm-12 mb-2">
         <div className="card">
-          {/* <img src={hero.image.url} alt={hero.name} className="card-img-top" /> */}
+          <img src={hero.image.url} alt={hero.name} className="card-img-top" />
           <div className="card-body">
-            {/* <h5 className="card-title">{hero.name}</h5> */}
-            {/* <p className="card-title">{hero.id}</p> */}
+            <h5 className="card-title">{hero.name}</h5>
+            <p className="card-title">{hero.id}</p>
             {/* <h5 className="card-title">{hero.work.occupation}</h5> */}
             <p className="text-center mb-0">
               <button
