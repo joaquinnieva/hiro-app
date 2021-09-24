@@ -2,4 +2,4 @@
 
 ## Proyecto para Challenge Alkemy
 
-### `React - Redux - Formik - ReactRouter - Axios - API`
+### `React` - `Redux` - `Formik` - `ReactRouter` - `Axios` - `API`
