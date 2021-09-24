@@ -94,10 +94,9 @@ const LoginButton = (props, { addLogin }) => {
 const mapStateToProps = (state) => ({});
 
 const mapDispatchToProps = (dispatch) => ({
-  addLogin(login) {
+  addLogin() {
     dispatch({
       type: "LOGIN",
-      login,
     });
   },
 });

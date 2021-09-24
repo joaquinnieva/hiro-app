@@ -1,14 +1,11 @@
 import React from "react";
 import { connect } from "react-redux";
-import Home from "../components/Home";
+import HeroHome from "../components/HeroHome";
 
 const HomePage = ({ heroes }) => {
   return (
     <>
-      <div className="container">
-        <p>My team</p>
-        <Home />
-      </div>
+      <HeroHome />
     </>
   );
 };

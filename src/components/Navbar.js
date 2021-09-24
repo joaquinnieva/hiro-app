@@ -3,9 +3,9 @@ import LogoutButton from "./LogoutButton";
 
 function Navbar() {
   return (
-    <nav className="navbar fixed-top navbar-expand-md navbar-light bg-light">
+    <nav className="navbar navbar-dark bg-secondary fixed-top navbar-expand-md">
       <div className="container-fluid">
-        <h2 className="navbar-brand">Hiro</h2>
+        <h2 className="navbar-brand">HIRO</h2>
         <button
           className="navbar-toggler"
           type="button"
@@ -32,21 +32,11 @@ function Navbar() {
             <li className="nav-item">
               <NavLink
                 exact
-                to="/heroes"
+                to="/search"
                 className="nav-link"
                 activeClassName="active"
               >
-                Heroes
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink
-                exact
-                to="/1"
-                className="nav-link"
-                activeClassName="active"
-              >
-                1
+                Search
               </NavLink>
             </li>
           </ul>

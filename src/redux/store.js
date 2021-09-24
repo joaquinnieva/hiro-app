@@ -1,24 +1,44 @@
 import { createStore } from "redux";
 
-// constantes
+// state
 const initialState = {
+  login: true,
   team: [],
 };
 
-// types
-
-// reducer
+// reducer - actions - types
 const heroesReducer = (state = initialState, action) => {
   switch (action.type) {
-    case "TEAM":
-      return { ...state, team: state.team.concat(action.hero) };
+    case "LOGIN":
+      return { ...state, login: true };
+    case "TEAM": {
+      // let alignment = state.team.find((hero) => hero.biography.alignment === action.hero.id);
+      let existHero = state.team.find((hero) => hero.id === action.hero.id);
+      return existHero
+        ? { ...state }
+        : {
+            ...state,
+            team: state.team.concat(action.hero),
+          };
+      // if (existHero) {
+
+      // } else if (alignment) {
+
+      // } {
+
+      // }
+    }
+
+    case "DELETE":
+      return {
+        ...state,
+        team: state.team.filter((hero) => hero.id !== action.hero.id),
+      };
 
     default:
       return state;
   }
 };
-
-// acciones
 
 // store
 export default createStore(heroesReducer);
