@@ -4,7 +4,7 @@ import HomePage from "./pages/HomePage";
 import SearchPage from "./pages/SearchPage";
 import LoginPage from "./pages/LoginPage";
 import PrivateRoute from "./components/PrivateRoute";
-import HeroInfo from "./components/HeroInfo";
+import InfoPage from "./pages/InfoPage";
 
 const App = () => {
   return (
@@ -15,7 +15,7 @@ const App = () => {
         <Route exact path="/login" component={LoginPage} />
         <PrivateRoute exact path="/" component={HomePage} />
         <PrivateRoute exact path="/search" component={SearchPage} />
-        <PrivateRoute exact path="/:id" component={HeroInfo} />
+        <PrivateRoute exact path="/:id" component={InfoPage} />
         <Route path="*" component={HomePage} />
       </Switch>
     </BrowserRouter>

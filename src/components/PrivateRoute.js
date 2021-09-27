@@ -2,7 +2,8 @@ import React from "react";
 import { connect } from "react-redux";
 import { Redirect, Route } from "react-router";
 
-const PrivateRoute = ({ login, component: Component, ...others }) => {
+const PrivateRoute = ({ component: Component, ...others }) => {
+  const login = true;
   return (
     <Route {...others}>
       {login ? <Component /> : <Redirect to="/login" />}
