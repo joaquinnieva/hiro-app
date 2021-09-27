@@ -35,12 +35,12 @@ export default function getStats(team) {
   );
   // stats to array
   let totalStats = [
-    { name: "Intelligence", amount: totalIntelligence },
-    { name: "Strength", amount: totalStrength },
-    { name: "Speed", amount: totalSpeed },
-    { name: "Durability", amount: totalDurability },
-    { name: "Power", amount: totalPower },
-    { name: "Combat", amount: totalCombat },
+    { name: "Intelligence:", amount: totalIntelligence },
+    { name: "Strength:", amount: totalStrength },
+    { name: "Speed:", amount: totalSpeed },
+    { name: "Durability:", amount: totalDurability },
+    { name: "Power:", amount: totalPower },
+    { name: "Combat:", amount: totalCombat },
   ];
   // stats ordered by amount
   totalStats.sort((a, b) => {

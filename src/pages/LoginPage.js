@@ -1,13 +1,10 @@
 import React from "react";
-
-import { Formik } from "formik";
-import { withRouter } from "react-router";
+import { Formik, Form, Field, ErrorMessage } from "formik";
 
 const Login = (props) => {
-  const { history } = props;
-
   const inLogin = () => {
-    history.push("/");
+    localStorage.setItem("sesion", true);
+    window.location.reload(true);
   };
 
   return (
@@ -43,39 +40,30 @@ const Login = (props) => {
               inLogin();
             }}
           >
-            {({
-              values,
-              errors,
-              touched,
-              handleChange,
-              handleBlur,
-              handleSubmit,
-              isSubmitting,
-            }) => (
-              <form onSubmit={handleSubmit} className="row g-3 mb-3">
+            {({ values, handleBlur, isSubmitting }) => (
+              <Form className="row g-3 mb-3">
                 <div className="mb-3">
-                  <input
+                  <Field
                     className="form-control"
                     type="email"
                     name="email"
-                    onChange={handleChange}
                     onBlur={handleBlur}
                     value={values.email}
                     placeholder="Email"
                   />
-                  {errors.email && touched.email && errors.email}
+                  <ErrorMessage name="email" component="div" />
                 </div>
                 <div className="mb-3">
-                  <input
+                  <Field
                     className="form-control"
                     type="password"
                     name="password"
-                    onChange={handleChange}
                     onBlur={handleBlur}
                     value={values.password}
                     placeholder="Password"
                   />
-                  {errors.password && touched.password && errors.password}
+
+                  <ErrorMessage name="password" component="div" />
                 </div>
                 <div className="d-grid">
                   <button
@@ -86,7 +74,7 @@ const Login = (props) => {
                     Login
                   </button>
                 </div>
-              </form>
+              </Form>
             )}
           </Formik>
         </div>
@@ -95,4 +83,4 @@ const Login = (props) => {
   );
 };
 
-export default withRouter(Login);
+export default Login;

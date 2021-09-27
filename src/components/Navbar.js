@@ -2,6 +2,7 @@ import { NavLink } from "react-router-dom";
 import LogoutButton from "./LogoutButton";
 
 function Navbar() {
+  let isLogged = localStorage.getItem("sesion");
   return (
     <nav className="navbar navbar-dark bg-secondary fixed-top navbar-expand-md">
       <div className="container-fluid">
@@ -40,9 +41,7 @@ function Navbar() {
               </NavLink>
             </li>
           </ul>
-          <form className="d-flex">
-            <LogoutButton></LogoutButton>
-          </form>
+          <div className="d-flex">{isLogged ? <LogoutButton /> : ""}</div>
         </div>
       </div>
     </nav>

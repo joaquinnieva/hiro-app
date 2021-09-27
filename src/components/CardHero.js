@@ -4,7 +4,7 @@ import Images from "../assets/Images";
 
 const CardHero = ({ info, action, icon }) => {
   return (
-    <div className="col-lg-4 col-md-6 col-sm-12 mb-2">
+    <div className="col-lg-4 col-md-6 col-sm-6 mb-2">
       <div className="card">
         <img src={info.image?.url} alt={info.name} className="card-img-top" />
         <div className="card-body">

@@ -5,6 +5,7 @@ import SearchPage from "./pages/SearchPage";
 import LoginPage from "./pages/LoginPage";
 import PrivateRoute from "./components/PrivateRoute";
 import InfoPage from "./pages/InfoPage";
+import LoginRoute from "./components/LoginRoute";
 
 const App = () => {
   return (
@@ -12,7 +13,7 @@ const App = () => {
       <Navbar />
       <Switch>
         <Redirect from="/hiro-app" to="/" />
-        <Route exact path="/login" component={LoginPage} />
+        <LoginRoute exact path="/login" component={LoginPage} />
         <PrivateRoute exact path="/" component={HomePage} />
         <PrivateRoute exact path="/search" component={SearchPage} />
         <PrivateRoute exact path="/:id" component={InfoPage} />

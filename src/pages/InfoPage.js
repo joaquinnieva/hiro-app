@@ -3,9 +3,10 @@ import { connect } from "react-redux";
 import { useParams } from "react-router";
 import Error from "../components/Error";
 import Images from "../assets/Images";
+import getApi from "../functions/getApi";
+import getInfoHero from "../functions/getInfoHero";
 import filterAlignment from "../functions/filterAlignment";
 import filterDuplicate from "../functions/filterDuplicate";
-import getApi from "../functions/getApi";
 
 const InfoPage = ({ addToTeam, team }) => {
   // error
@@ -14,12 +15,16 @@ const InfoPage = ({ addToTeam, team }) => {
   const [hero, setHero] = useState([]);
   // to use param of url
   const { id } = useParams();
+  // hero filter
+  const info = getInfoHero(hero);
+
   // api - renderer
   useEffect(() => {
     getApi(`${id}`).then((data) => {
       setHero(data);
     });
   }, [id]);
+
   // hero filter
   const addHero = (h) => {
     const isDuplicate = filterDuplicate(team, h);
@@ -46,38 +51,13 @@ const InfoPage = ({ addToTeam, team }) => {
             <div className="col-md-8">
               <div className="card-body d-flex flex-column">
                 <h5 className="card-title border-bottom"> {hero.name}</h5>
-                <div className="row card-text">
-                  <p className="col-auto">Alias:</p>
-                  <p className="col-auto">{hero.biography?.aliases[0]}</p>
-                </div>
-                <div className="row card-text">
-                  <p className="col-auto">Speed:</p>
-                  <p className="col-auto">{hero.powerstats?.speed}</p>
-                </div>
-                <div className="row card-text">
-                  <p className="col-auto">Height:</p>
-                  <p className="col-auto">{hero.appearance?.height[1]}</p>
-                </div>
-                <div className="row card-text">
-                  <p className="col-auto">Weight:</p>
-                  <p className="col-auto">{hero.appearance?.weight[1]}</p>
-                </div>
-                <div className="row card-text">
-                  <p className="col-auto">Eye color:</p>
-                  <p className="col-auto">{hero.appearance?.["eye-color"]}</p>
-                </div>
-                <div className="row card-text">
-                  <p className="col-auto">Hair color:</p>
-                  <p className="col-auto">{hero.appearance?.["hair-color"]}</p>
-                </div>
-                <div className="row card-text">
-                  <p className="col-auto">Work:</p>
-                  <p className="col-auto">{hero.work?.occupation}</p>
-                </div>
-                <div className="row card-text">
-                  <p className="col-auto">Alignment:</p>
-                  <p className="col-auto">{hero.biography?.alignment}</p>
-                </div>
+
+                {info.map((i) => (
+                  <div key={i.name} className="row card-text">
+                    <p className="col-auto">{i.name}:</p>
+                    <p className="col-auto">{i.value}</p>
+                  </div>
+                ))}
               </div>
               <div className="d-grid g-5 m-1">
                 <button
