@@ -6,13 +6,17 @@ import filterAlignment from "../functions/filterAlignment";
 import Error from "../components/Error";
 import CardHero from "../components/CardHero";
 import Images from "../assets/Images";
+import getMessage from "../functions/getMessage";
 
 const SearchPage = ({ addToTeam, team }) => {
+  // alert state
+  const [alert, setAlert] = useState(null);
+  const [added, setAdded] = useState(null);
   // api state
   const [result, setResult] = useState([]);
   // search states
   const msg = "This is a invalid text ❗";
-  const [search, setSearch] = useState("ro");
+  const [search, setSearch] = useState("ca");
   const [input, setInput] = useState("");
   // event handling
   const handleChange = (e) => {
@@ -29,6 +33,18 @@ const SearchPage = ({ addToTeam, team }) => {
     const isDuplicate = filterDuplicate(team, h);
     const filtered = filterAlignment(team, isDuplicate.hero);
     addToTeam(filtered);
+
+    if (filtered) {
+      setAdded("Successfully added!");
+    }
+
+    const msg = getMessage(team, h);
+    setAlert(msg);
+
+    setTimeout(() => {
+      setAlert(null);
+      setAdded(null);
+    }, 1100);
   };
 
   // api - renderer
@@ -41,19 +57,6 @@ const SearchPage = ({ addToTeam, team }) => {
   return (
     <>
       <div className="container">
-        {alert ? (
-          <div className="fixed-bottom my-1 ">
-            <div
-              className={`text-white text-center bg-${alert.color} bg-opacity-100 py-1`}
-              role="alert"
-            >
-              {alert.message}
-            </div>
-          </div>
-        ) : (
-          ""
-        )}
-
         <div className="col-lg-6  col-sm-12 m-auto">
           <form className="d-flex" onSubmit={handleSubmit}>
             <input
@@ -79,6 +82,25 @@ const SearchPage = ({ addToTeam, team }) => {
               ))
             : ""}
         </div>
+        {/* conditional alerts   */}
+        {added ? (
+          <div className="fixed-bottom my-1 ">
+            <div className="text-center text-black bg-success bg-opacity-100 py-1" role="alert">
+              {added}
+            </div>
+          </div>
+        ) : (
+          ""
+        )}
+        {alert ? (
+          <div className="fixed-bottom my-1 ">
+            <div className="text-center bg-warning bg-opacity-100 py-1" role="alert">
+              {alert}
+            </div>
+          </div>
+        ) : (
+          ""
+        )}
       </div>
     </>
   );

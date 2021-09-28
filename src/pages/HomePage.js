@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { connect } from "react-redux";
 import Images from "../assets/Images";
 import getStats from "../functions/getStats";
@@ -5,7 +6,19 @@ import CardHero from "../components/CardHero";
 import Stats from "../components/Stats";
 
 const HomePage = ({ team, deleteToTeam }) => {
+  // alert state
+  const [removed, setRemoved] = useState(null);
+  // getting stats
   const stats = getStats(team);
+  // hero filter
+  const removeHero = (h) => {
+    deleteToTeam(h);
+
+    setRemoved("Hero removed");
+    setTimeout(() => {
+      setRemoved(null);
+    }, 1100);
+  };
 
   return (
     <>
@@ -26,19 +39,21 @@ const HomePage = ({ team, deleteToTeam }) => {
           {/* conditional team renderer  */}
           {team.length !== 0 ? (
             team.map((hero) => (
-              <CardHero
-                key={hero.id}
-                info={hero}
-                action={deleteToTeam}
-                icon={Images.x}
-              />
+              <CardHero key={hero.id} info={hero} action={removeHero} icon={Images.x} />
             ))
           ) : (
-            <p className="col-lg-12 mb-2">
-              You need heroes for your team! 🐱‍🏍
-            </p>
+            <p className="col-lg-12 mb-2">You need heroes for your team! 🐱‍🏍</p>
           )}
         </div>
+        {removed ? (
+          <div className="fixed-bottom my-1 ">
+            <div className="text-center text-black bg-danger bg-opacity-100 py-1" role="alert">
+              {removed}
+            </div>
+          </div>
+        ) : (
+          ""
+        )}
       </div>
     </>
   );

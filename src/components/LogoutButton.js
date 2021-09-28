@@ -8,7 +8,7 @@ const LogoutButton = () => {
   };
   return (
     <>
-      <button className="btn btn-secondary" onClick={logout}>
+      <button className="btn text-white" onClick={logout}>
         Log Out &nbsp;
         <img src={Images.logout} alt="logout" />
       </button>

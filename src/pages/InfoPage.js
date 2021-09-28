@@ -7,8 +7,12 @@ import getApi from "../functions/getApi";
 import getInfoHero from "../functions/getInfoHero";
 import filterAlignment from "../functions/filterAlignment";
 import filterDuplicate from "../functions/filterDuplicate";
+import getMessage from "../functions/getMessage";
 
 const InfoPage = ({ addToTeam, team }) => {
+  // alert state
+  const [alert, setAlert] = useState(null);
+  const [added, setAdded] = useState(null);
   // error
   const msg = "I can't find this hero 🤔";
   // api state
@@ -30,6 +34,18 @@ const InfoPage = ({ addToTeam, team }) => {
     const isDuplicate = filterDuplicate(team, h);
     const filtered = filterAlignment(team, isDuplicate.hero);
     addToTeam(filtered);
+
+    if (filtered) {
+      setAdded("Successfully added!");
+    }
+
+    const msg = getMessage(team, h);
+    setAlert(msg);
+
+    setTimeout(() => {
+      setAlert(null);
+      setAdded(null);
+    }, 1100);
   };
 
   return (
@@ -60,10 +76,7 @@ const InfoPage = ({ addToTeam, team }) => {
                 ))}
               </div>
               <div className="d-grid g-5 m-1">
-                <button
-                  onClick={() => addHero(hero)}
-                  className="btn btn-primary col-12"
-                >
+                <button onClick={() => addHero(hero)} className="btn btn-primary col-12">
                   <img src={Images.add} alt="add" />
                   &nbsp;Add to team
                 </button>
@@ -73,6 +86,25 @@ const InfoPage = ({ addToTeam, team }) => {
         </div>
       ) : (
         <Error msg={msg} />
+      )}
+      {/* conditional alerts   */}
+      {added ? (
+        <div className="fixed-bottom my-1 ">
+          <div className="text-center text-black bg-success bg-opacity-100 py-1" role="alert">
+            {added}
+          </div>
+        </div>
+      ) : (
+        ""
+      )}
+      {alert ? (
+        <div className="fixed-bottom my-1 ">
+          <div className="text-center bg-warning bg-opacity-100 py-1" role="alert">
+            {alert}
+          </div>
+        </div>
+      ) : (
+        ""
       )}
     </div>
   );

@@ -5,7 +5,10 @@ import Images from "../assets/Images";
 function Navbar() {
   let isLogged = localStorage.getItem("sesion");
   return (
-    <nav className="navbar navbar-dark bg-secondary fixed-top navbar-expand-md">
+    <nav
+      className="navbar navbar-dark fixed-top navbar-expand-md"
+      style={{ backgroundColor: "#184e77" }}
+    >
       <div className="container-fluid">
         <h3 className="navbar-brand m-0">
           <img src={Images.logo} alt="Hiro App" />
