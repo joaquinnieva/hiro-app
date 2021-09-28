@@ -1,20 +1,25 @@
 {
   "files": {
     "main.css": "/hiro-app/static/css/main.d1d2bc10.chunk.css",
-    "main.js": "/hiro-app/static/js/main.9dc040a4.chunk.js",
-    "main.js.map": "/hiro-app/static/js/main.9dc040a4.chunk.js.map",
+    "main.js": "/hiro-app/static/js/main.dea4bf9f.chunk.js",
+    "main.js.map": "/hiro-app/static/js/main.dea4bf9f.chunk.js.map",
     "runtime-main.js": "/hiro-app/static/js/runtime-main.5a42e3e9.js",
     "runtime-main.js.map": "/hiro-app/static/js/runtime-main.5a42e3e9.js.map",
-    "static/js/2.4d1ebf36.chunk.js": "/hiro-app/static/js/2.4d1ebf36.chunk.js",
-    "static/js/2.4d1ebf36.chunk.js.map": "/hiro-app/static/js/2.4d1ebf36.chunk.js.map",
+    "static/js/2.1eff42e0.chunk.js": "/hiro-app/static/js/2.1eff42e0.chunk.js",
+    "static/js/2.1eff42e0.chunk.js.map": "/hiro-app/static/js/2.1eff42e0.chunk.js.map",
     "index.html": "/hiro-app/index.html",
     "static/css/main.d1d2bc10.chunk.css.map": "/hiro-app/static/css/main.d1d2bc10.chunk.css.map",
-    "static/js/2.4d1ebf36.chunk.js.LICENSE.txt": "/hiro-app/static/js/2.4d1ebf36.chunk.js.LICENSE.txt"
+    "static/js/2.1eff42e0.chunk.js.LICENSE.txt": "/hiro-app/static/js/2.1eff42e0.chunk.js.LICENSE.txt",
+    "static/media/add.4cff6970.svg": "/hiro-app/static/media/add.4cff6970.svg",
+    "static/media/info.d8003ed3.svg": "/hiro-app/static/media/info.d8003ed3.svg",
+    "static/media/logo.c9ee5069.svg": "/hiro-app/static/media/logo.c9ee5069.svg",
+    "static/media/logout.37f95b88.svg": "/hiro-app/static/media/logout.37f95b88.svg",
+    "static/media/x.c67fb32d.svg": "/hiro-app/static/media/x.c67fb32d.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.5a42e3e9.js",
-    "static/js/2.4d1ebf36.chunk.js",
+    "static/js/2.1eff42e0.chunk.js",
     "static/css/main.d1d2bc10.chunk.css",
-    "static/js/main.9dc040a4.chunk.js"
+    "static/js/main.dea4bf9f.chunk.js"
   ]
 }
