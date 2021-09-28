@@ -3,6 +3,7 @@ import { createStore } from "redux";
 // state
 const initialState = {
   team: [],
+  msg: null,
 };
 
 // reducer - actions - types
@@ -10,7 +11,10 @@ const heroesReducer = (state = initialState, action) => {
   switch (action.type) {
     case "TEAM": {
       return action.hero
-        ? { ...state, team: state.team.concat(action.hero) }
+        ? {
+            ...state,
+            team: state.team.concat(action.hero),
+          }
         : { ...state };
     }
 

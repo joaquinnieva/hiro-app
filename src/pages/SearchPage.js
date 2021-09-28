@@ -41,6 +41,19 @@ const SearchPage = ({ addToTeam, team }) => {
   return (
     <>
       <div className="container">
+        {alert ? (
+          <div className="fixed-bottom my-1 ">
+            <div
+              className={`text-white text-center bg-${alert.color} bg-opacity-100 py-1`}
+              role="alert"
+            >
+              {alert.message}
+            </div>
+          </div>
+        ) : (
+          ""
+        )}
+
         <div className="col-lg-6  col-sm-12 m-auto">
           <form className="d-flex" onSubmit={handleSubmit}>
             <input
@@ -62,12 +75,7 @@ const SearchPage = ({ addToTeam, team }) => {
           {/* conditional hero renderer  */}
           {result
             ? result.map((hero) => (
-                <CardHero
-                  key={hero.id}
-                  info={hero}
-                  action={addHero}
-                  icon={Images.add}
-                />
+                <CardHero key={hero.id} info={hero} action={addHero} icon={Images.add} />
               ))
             : ""}
         </div>

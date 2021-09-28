@@ -1,10 +1,7 @@
 export default function filterAlignment(state, hero) {
   // getting alignment
-  let goodHero = state.filter(
-    (heroes) => heroes.biography?.alignment === "good"
-  );
+  let goodHero = state.filter((heroes) => heroes.biography?.alignment === "good");
   let badHero = state.filter((heroes) => heroes.biography?.alignment === "bad");
-
   let alignment = hero?.biography?.alignment;
 
   // filter by alignment and filter the amount

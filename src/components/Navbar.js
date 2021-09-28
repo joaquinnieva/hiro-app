@@ -1,12 +1,17 @@
 import { NavLink } from "react-router-dom";
 import LogoutButton from "./LogoutButton";
+import Images from "../assets/Images";
 
 function Navbar() {
   let isLogged = localStorage.getItem("sesion");
   return (
     <nav className="navbar navbar-dark bg-secondary fixed-top navbar-expand-md">
       <div className="container-fluid">
-        <h2 className="navbar-brand">HIRO</h2>
+        <h3 className="navbar-brand m-0">
+          <img src={Images.logo} alt="Hiro App" />
+          HIRO&nbsp;&nbsp;&nbsp;
+        </h3>
+
         <button
           className="navbar-toggler"
           type="button"
@@ -21,22 +26,12 @@ function Navbar() {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <NavLink
-                exact
-                to="/"
-                className="nav-link"
-                activeClassName="active"
-              >
+              <NavLink exact to="/" className="nav-link" activeClassName="active">
                 Home
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink
-                exact
-                to="/search"
-                className="nav-link"
-                activeClassName="active"
-              >
+              <NavLink exact to="/search" className="nav-link" activeClassName="active">
                 Search
               </NavLink>
             </li>
