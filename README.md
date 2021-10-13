@@ -1,5 +1,14 @@
-# HIRO
+<h1 align="center">Hiro</h1>
 
-## Proyecto para Challenge Alkemy
+> Bienvenido a mi proyecto 👋<br /> Es un proyecto para mi portafolio donde desarrollo una app que contiene todos los heroes y puedes crear un equipo.
 
-### `React` - `Redux` - `Formik` - `ReactRouter` - `Axios` - `API`
+Tecnologias:
+- React
+- React-router
+- Redux
+- Bootstrap
+- Formik
+- Axios
+
+---
+_Esta app fue desarrollada para el challenge de aplicacion en Alkemy para acceder a Alkemy Labs y fue aprobado.
