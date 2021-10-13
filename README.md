@@ -11,4 +11,4 @@ Tecnologias:
 - Axios
 
 ---
-_Esta app fue desarrollada para el challenge de aplicacion en Alkemy para acceder a Alkemy Labs y fue aprobado.
+_Esta app fue desarrollada para el challenge de aplicacion en Alkemy para acceder a Alkemy Labs y fue aprobado._
