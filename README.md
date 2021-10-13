@@ -7,11 +7,11 @@ _Bienvenido a mi proyecto 👋<br /> Es un proyecto para mi portafolio donde des
 ---
  
 Tecnologias:
-- React
-- React-router
-- Redux
-- Bootstrap
-- Formik
-- Axios
+- `React`
+- `React-router`
+- `Redux`
+- `Bootstrap`
+- `Formik`
+- `Axios`
 
 >Esta app fue desarrollada para el challenge de aplicacion en Alkemy para acceder a Alkemy Labs y fue aprobado.
