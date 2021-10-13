@@ -1,4 +1,4 @@
-# Hiro
+<h1 style="center">Hiro</h1>
 
 ---
 
